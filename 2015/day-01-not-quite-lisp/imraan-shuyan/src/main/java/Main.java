@@ -1,19 +1,19 @@
-import java.util.HashMap;
-import java.util.Map;
-
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World");
-        Main.Program("");
+        System.out.println(Main.Program("((()"));
     };
 
     public static int Program(String input) {
-        if (input == "") {
-            return 0;
-        }
-        if (input == "(") {
-            return 1;
-        }
-        return 0;
+        int counter = 0;
+
+        for (char ch : input.toCharArray()) {
+            if (ch == '(') {
+                counter++;
+            }
+            if (ch == ')') {
+                counter--;
+            }
+        } 
+        return counter;
     }
 }
