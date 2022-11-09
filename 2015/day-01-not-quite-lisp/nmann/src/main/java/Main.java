@@ -3,32 +3,11 @@ public class Main {
         ReadFile reader = new ReadFile();
         String data = reader.readFile("src/data/index.txt");
 
-        Integer floor = traverseString(data, "one");
+        Integer floor = Instructions.partOne(data);
         System.out.println(floor);
 
-        Integer basementPosition = traverseString(data, "two");
+        Integer basementPosition = Instructions.partTwo(data);
         System.out.println(basementPosition);
 
     }
-
-    public static Integer traverseString(String str, String part)
-    {
-        char[] ch = str.toCharArray();
-        Integer output = 0;
-        Integer position;
- 
-        for (int i = 0; i < ch.length; i++) {
-
-            output+= ch[i] == '(' ? 1 : ch[i] == ')' ? -1 : 0;
-            
-            if(output < 0 && part == "two") {
-                position = i+1;
-                return position;
-              }
-        }
-
-        return output;
-    }
-
-
 }
