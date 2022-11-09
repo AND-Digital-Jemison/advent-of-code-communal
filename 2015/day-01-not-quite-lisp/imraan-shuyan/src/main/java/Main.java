@@ -10,7 +10,8 @@ public class Main {
             Scanner myReader = new Scanner(myObj);
             if(myReader.hasNextLine()){
                 String data = myReader.nextLine();
-                System.out.println(Main.program(data));
+                System.out.println(Main.calculateFloor(data));
+                System.out.println(Main.calculateCharPosition(data));
             }
             myReader.close();
 
@@ -20,7 +21,7 @@ public class Main {
         
     };
 
-    public static int program(String input) {
+    public static int calculateFloor(String input) {
             int counter = 0;
             for (char ch : input.toCharArray()) {
                 if (ch == '(') {
@@ -31,5 +32,22 @@ public class Main {
                 }
             }
             return counter;       
+    }
+
+    public static int calculateCharPosition(String input) {
+        int counter = 0;
+            for (int i = 0; i < input.length(); i++) {
+                char ch = input.toCharArray()[i];
+                if (ch == '(') {
+                    counter++;
+                }
+                if (ch == ')') {
+                    counter--;
+                }
+                if (counter == -1){
+                    return i+1;
+                }
+            }
+            return -1;
     }
 }

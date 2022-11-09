@@ -8,7 +8,7 @@ public class NotQuiteLispTest {
     @DisplayName("given an empty string returns 0")
     void testEmptyString() {
         String input = "0";
-        int result = Main.program(input);
+        int result = Main.calculateFloor(input);
         assertEquals(0, result);
     }
 
@@ -17,7 +17,7 @@ public class NotQuiteLispTest {
     void testSingleOpenBracket() {
         String input = "(";
         int expected = 1;
-        int result = Main.program(input);
+        int result = Main.calculateFloor(input);
         assertEquals(expected, result);
     }
 
@@ -26,7 +26,7 @@ public class NotQuiteLispTest {
     void testSingleCloseBracket() {
         String input = ")";
         int expected = -1;
-        int result = Main.program(input);
+        int result = Main.calculateFloor(input);
         assertEquals(expected, result);
     }
 
@@ -35,7 +35,25 @@ public class NotQuiteLispTest {
     void testOpenBrackets() {
         String input = "((";
         int expected = 2;
-        int result = Main.program(input);
+        int result = Main.calculateFloor(input);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    @DisplayName("when enter the basement returns the the character position")
+    void testBasementCharacterPosition() {
+        String input = ")";
+        int expected = 1;
+        int result = Main.calculateCharPosition(input);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    @DisplayName("when you enter the basement returns -1")
+    void testNeverReachBasement() {
+        String input = "((((((";
+        int expected = -1;
+        int result = Main.calculateCharPosition(input);
         assertEquals(expected, result);
     }
 
