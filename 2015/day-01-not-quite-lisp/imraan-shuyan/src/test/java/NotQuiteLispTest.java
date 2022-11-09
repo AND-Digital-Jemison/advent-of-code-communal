@@ -7,8 +7,8 @@ public class NotQuiteLispTest {
     @Test
     @DisplayName("given an empty string returns 0")
     void testEmptyString() {
-        String input = "";
-        int result = Main.Program(input);
+        String input = "0";
+        int result = Main.program(input);
         assertEquals(0, result);
     }
 
@@ -17,7 +17,7 @@ public class NotQuiteLispTest {
     void testSingleOpenBracket() {
         String input = "(";
         int expected = 1;
-        int result = Main.Program(input);
+        int result = Main.program(input);
         assertEquals(expected, result);
     }
 
@@ -26,7 +26,7 @@ public class NotQuiteLispTest {
     void testSingleCloseBracket() {
         String input = ")";
         int expected = -1;
-        int result = Main.Program(input);
+        int result = Main.program(input);
         assertEquals(expected, result);
     }
 
@@ -35,7 +35,8 @@ public class NotQuiteLispTest {
     void testOpenBrackets() {
         String input = "((";
         int expected = 2;
-        int result = Main.Program(input);
+        int result = Main.program(input);
         assertEquals(expected, result);
     }
+
 }
