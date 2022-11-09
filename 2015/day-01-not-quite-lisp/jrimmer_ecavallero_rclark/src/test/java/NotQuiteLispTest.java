@@ -23,4 +23,14 @@ public class NotQuiteLispTest {
     public void variousBracketsIncrementAndDecrement(){
         assertEquals(notQuiteLisp.getFloor("(())("), 1);
     }
+
+    @Test
+    public void getFirstBasementIndex(){
+        assertEquals(notQuiteLisp.getFirstBasementIndex("(()))"), 5);
+    }
+
+    @Test
+    public void neverGoesToBasement(){
+        assertEquals(notQuiteLisp.getFirstBasementIndex("(())(((("), -1);
+    }
 }
