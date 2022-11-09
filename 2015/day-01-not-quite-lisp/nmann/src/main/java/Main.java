@@ -11,7 +11,7 @@ public class Main {
 
     }
 
-    static Integer traverseString(String str, String part)
+    public static Integer traverseString(String str, String part)
     {
         char[] ch = str.toCharArray();
         Integer output = 0;
@@ -19,7 +19,7 @@ public class Main {
  
         for (int i = 0; i < ch.length; i++) {
 
-            output+= ch[i] == '(' ? 1 : -1;
+            output+= ch[i] == '(' ? 1 : ch[i] == ')' ? -1 : 0;
             
             if(output < 0 && part == "two") {
                 position = i+1;
