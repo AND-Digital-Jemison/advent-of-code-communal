@@ -2,39 +2,32 @@ package notquitelisp;
 
 public class Instructions {
 
-    public static Integer followToFloor(String instuctions) {
-        Integer floor = 0;
+    private static int instructionToChange(char c) {
+        switch (c) {
+            case '(':
+                return 1;
+            case ')':
+                return -1;
+            default:
+                return 0;
+        }
+    }
+
+    public static int followToFloor(String instuctions) {
+        int floor = 0;
         char[] chars = instuctions.toCharArray();
         for (char c : chars) {
-            switch (c) {
-                case '(': {
-                    floor++;
-                    break;
-                }
-                case ')': {
-                    floor--;
-                    break;
-                }
-            }
+            floor += instructionToChange(c);
         }
         return floor;
     }
 
-    public static Integer instructionsToBasement(String instuctions) {
-        Integer floor = 0;
+    public static int instructionsToBasement(String instuctions) {
+        int floor = 0;
         char[] chars = instuctions.toCharArray();
         for (int i = 0; i < chars.length; i++) {
             char c = chars[i];
-            switch (c) {
-                case '(': {
-                    floor++;
-                    break;
-                }
-                case ')': {
-                    floor--;
-                    break;
-                }
-            }
+            floor += instructionToChange(c);
             if (floor < 0) {
                 return i + 1;
             }
