@@ -19,11 +19,17 @@ public class Main {
         try {
             reader = new BufferedReader(new FileReader("src/main/java/input.txt"));
             String line = reader.readLine();
+            int sum = 0;
             while (line != null) {
                 int[] elements = Arrays.stream(line.split("x")).mapToInt(Integer::parseInt).toArray();
-                System.out.println(wrappingPaperService.calculatePaper(elements[0], elements[1], elements[2]));
+//                System.out.println(elements[2]);
+                int paperSum = wrappingPaperService.calculatePaper(elements[0], elements[1], elements[2]);
+                System.out.println(paperSum);
+
+                sum += paperSum;
                 line = reader.readLine();
             }
+            System.out.println(sum);
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
