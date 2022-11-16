@@ -5,7 +5,9 @@ public class WrappingPaperServiceTest {
     private final WrappingPaperService wrappingPaperService = new WrappingPaperService();
 
     @Test
-    public void returnZero() {
-        assertEquals(wrappingPaperService.calculatePaper(0, 0, 0), 0);
-    }
+    public void returnAreaSumPlusSpare() { assertEquals(wrappingPaperService.calculatePaper(1, 1, 1), 7); }
+
+    @Test
+    public void returnAreaSumPlusSpare2() { assertEquals(wrappingPaperService.calculatePaper(2, 3, 4), 56); }
+
 }
