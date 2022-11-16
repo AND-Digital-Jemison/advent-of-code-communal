@@ -2,35 +2,17 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class NotQuiteLispTest {
-    private final NotQuiteLisp notQuiteLisp = new NotQuiteLisp();
-
+    WrappingPaperCalculator cal = new WrappingPaperCalculator();
     @Test
-    public void emptyFloorZero(){
-        assertEquals(notQuiteLisp.getFloor(""), 0);
+    public void calculateWrappingPaperNeeded_example1(){
+        int r = cal.calculateWrappingPaperNeeded(new Dimensions(2,3,4));
+        assertEquals(58, r);
     }
 
     @Test
-    public void openBracketIncrements(){
-        assertEquals(notQuiteLisp.getFloor("("), 1);
+    public void calculateWrappingPaperNeeded_example2(){
+        int r = cal.calculateWrappingPaperNeeded(new Dimensions(1,1,10));
+        assertEquals(43, r);
     }
 
-    @Test
-    public void closedBracketDecrements(){
-        assertEquals(notQuiteLisp.getFloor(")"), -1);
-    }
-
-    @Test
-    public void variousBracketsIncrementAndDecrement(){
-        assertEquals(notQuiteLisp.getFloor("(())("), 1);
-    }
-
-    @Test
-    public void getFirstBasementIndex(){
-        assertEquals(notQuiteLisp.getFirstBasementIndex("(()))"), 5);
-    }
-
-    @Test
-    public void neverGoesToBasement(){
-        assertEquals(notQuiteLisp.getFirstBasementIndex("(())(((("), -1);
-    }
 }
