@@ -24,7 +24,6 @@ public class NotQuiteLisp {
             if (input.charAt(i) == ')') {
                 count--;
             }
-
             if (count == -1) {
                 return i + 1;
             }
