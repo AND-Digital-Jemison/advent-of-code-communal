@@ -22,11 +22,7 @@ public class Main {
             int sum = 0;
             while (line != null) {
                 int[] elements = Arrays.stream(line.split("x")).mapToInt(Integer::parseInt).toArray();
-//                System.out.println(elements[2]);
-                int paperSum = wrappingPaperService.calculatePaper(elements[0], elements[1], elements[2]);
-                System.out.println(paperSum);
-
-                sum += paperSum;
+                sum += wrappingPaperService.calculatePaper(elements[0], elements[1], elements[2]);
                 line = reader.readLine();
             }
             System.out.println(sum);
