@@ -22,6 +22,17 @@ public class Dimensions {
         return ((2* widthLength()) + (2* widthHeight()) + (2* heightLength()));
     }
 
+    public int shortestDistanceAroundSides() {
+        int[] array = { width, length, height};
+        Arrays.sort(array);
+
+        return (array[0] + array[1]) *2;
+    }
+
+    public int dimensionProduct() {
+        return width * length * height;
+    }
+
     @Override
     public String toString() {
         return this.width + "x" + this.height + "x" + this.length;
@@ -36,4 +47,5 @@ public class Dimensions {
     private int widthHeight(){
         return height* width;
     }
+
 }
