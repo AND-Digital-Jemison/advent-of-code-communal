@@ -6,4 +6,14 @@ public class WrappingPaperCalculator {
     }
 
 
+    public int calculateAllWrappingPaperNeeded(Dimensions[] dimsArray) {
+        int result = 0;
+
+        for (Dimensions d: dimsArray
+             ) {
+            result += calculateWrappingPaperNeeded(d);
+        }
+
+        return result;
+    }
 }
