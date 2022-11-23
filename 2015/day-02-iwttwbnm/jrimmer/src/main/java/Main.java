@@ -5,7 +5,10 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-
+//        fileReader = new FileReader()
+//        dimensions = fileReader.readLines(inputStr)
+//        wrappingCalculator = new WrappingPaperCalculator();
+//        wrappingCalculator.calculateAllPaperNeeded(dimensions);
     }
 
     private static List<String> getInput() throws IOException {

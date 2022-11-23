@@ -13,7 +13,7 @@ public class Dimensions {
 
     public int smallestAreaSide(){
         int[] array = { widthLength(), widthHeight(), heightLength()};
-        Arrays.sort(array); // LengthXWidth
+        Arrays.sort(array);
 
         return array[0];
     }
@@ -22,15 +22,18 @@ public class Dimensions {
         return ((2* widthLength()) + (2* widthHeight()) + (2* heightLength()));
     }
 
+    @Override
+    public String toString() {
+        return this.width + "x" + this.height + "x" + this.length;
+    }
+
     private int widthLength(){
         return width*length;
     }
-
     private int heightLength(){
         return height * length;
     }
     private int widthHeight(){
         return height* width;
     }
-
 }
