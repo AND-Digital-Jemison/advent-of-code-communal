@@ -37,18 +37,35 @@ public class WrappingPaperTest {
     }
 
     @Test
+    public void calculateAllRibbonNeeded(){
+        Dimensions[] dimsArray = new Dimensions[] {
+                new Dimensions(2, 3, 4),
+                new Dimensions(1, 1, 10)
+        };
+
+        int r = cal.calculateAllRibbonNeeded(dimsArray);
+        assertEquals(48, r);
+    }
+
+    @Test
     public void calculateRibbonLengthNeeded_example1(){
 
-        Dimensions presentDimension =  new Dimensions(2, 3, 4);
-        int ribbonLength = cal.calculateRibbonLengthNeeded(presentDimension);
-        assertEquals(34, ribbonLength);
+        Dimensions[] dimsArray = new Dimensions[] {
+                new Dimensions(2, 3, 4)
+        };
+
+        int r = cal.calculateAllRibbonNeeded(dimsArray);
+        assertEquals(34, r);
     }
 
     @Test
     public void calculateRibbonLengthNeeded_example2(){
 
-        Dimensions presentDimension =  new Dimensions(1, 1, 10);
-        int ribbonLength = cal.calculateRibbonLengthNeeded(presentDimension);
-        assertEquals(14, ribbonLength);
+        Dimensions[] dimsArray = new Dimensions[] {
+                new Dimensions(1, 1, 10)
+        };
+
+        int r = cal.calculateAllRibbonNeeded(dimsArray);
+        assertEquals(14, r);
     }
 }

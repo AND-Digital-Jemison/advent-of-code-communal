@@ -10,5 +10,9 @@ public class Main {
         int part1Result = wrappingCalculator.calculateAllWrappingPaperNeeded(dimensionsList);
 
         System.out.println("Part 1 result: " + part1Result);
+
+        int part2Result = wrappingCalculator.calculateAllRibbonNeeded(dimensionsList);
+
+        System.out.println("Part 2 result: " + part2Result);
     }
 }
