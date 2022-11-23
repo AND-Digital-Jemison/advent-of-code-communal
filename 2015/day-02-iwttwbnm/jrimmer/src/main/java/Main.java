@@ -5,11 +5,10 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        DimensionsReader reader = new DimensionsReader();
-        Dimensions[] dimensionsList = reader.parseDimensions("src/main/java/input.txt");
+        Dimensions[] dimensionsList = DimensionsReader.parseDimensions("src/main/java/input.txt");
         WrappingPaperCalculator wrappingCalculator = new WrappingPaperCalculator();
-        int result = wrappingCalculator.calculateAllWrappingPaperNeeded(dimensionsList);
+        int part1Result = wrappingCalculator.calculateAllWrappingPaperNeeded(dimensionsList);
 
-        System.out.println("Part 1 result: " + result);
+        System.out.println("Part 1 result: " + part1Result);
     }
 }
