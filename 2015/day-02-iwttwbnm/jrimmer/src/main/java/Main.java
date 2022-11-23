@@ -12,8 +12,4 @@ public class Main {
 
         System.out.println("Part 1 result: " + result);
     }
-
-    private static List<String> getInput() throws IOException {
-        return Files.readAllLines(Paths.get("src/main/java/input.txt"));
-    }
 }
